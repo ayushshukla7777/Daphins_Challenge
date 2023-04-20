@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Checkbox} from "antd";
-
+import Content from '../components/ReadMore'
 import axios from "axios";
 
 import Layout from "./../components/Layout/Layout";
@@ -146,17 +146,9 @@ const HomePage = () => {
                     </h5>
                   </div>
                   <p className="card-text ">
-                    {p.description.substring(0, 150)}...
+                       <Content data={p.description}/>
                   </p>
-                  <div className="card-name-price">
-                    <button
-                      className="btn btn-info ms-1"
-                      onClick={() => navigate(`/product/${p.slug}`)}
-                    >
-                      More Details
-                    </button>
 
-                  </div>
                 </div>
               </div>
             ))}
