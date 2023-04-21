@@ -79,3 +79,11 @@ filters
   font-weight: bold;
   font-size: 20px !important;
 }
+
+.piechart{
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
+  margin:20px;
+  color:black
+}
