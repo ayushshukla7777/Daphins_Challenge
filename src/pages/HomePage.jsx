@@ -7,6 +7,7 @@ import PieChart from "../components/PieChart";
 import Layout from "./../components/Layout/Layout";
 
 import "../styles/Homepage.css";
+import AuthContext from "../store/auth-context";
 
 const instance = axios.create({
   baseURL: "https://fakestoreapi.com",
@@ -91,6 +92,10 @@ const HomePage = () => {
     }
   };
   return (
+    <AuthContext.Provider value={{
+      name: location.state.name.name,
+      email:location.state.email.email,
+    }}>
     <Layout title={"ALl Products - Best offers "}>
       <div className="container-fluid row mt-3 home-page">
         <div className="col-md-3 filters">
@@ -147,6 +152,7 @@ const HomePage = () => {
         <PieChart></PieChart>
       </div>
     </Layout>
+    </AuthContext.Provider>
   );
 };
 

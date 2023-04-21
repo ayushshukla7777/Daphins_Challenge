@@ -6,7 +6,6 @@ import { Pie } from 'react-chartjs-2';
   
 const ReadMore = ({ children }) => {
     ChartJS.register(ArcElement, Tooltip, Legend);
-    console.log(children);
 
     const labelAssign=[];
 
@@ -46,7 +45,7 @@ const data = {
   return (
     <div className="text">
       {isOn ? '' : <Pie data={data} /> }
-      <span onClick={toggleIsOn} className="read-or-hide">
+      <span onClick={toggleIsOn} className="text">
         {isOn ? "Show PieChart" : "Hide Pie Chart"}
       </span>
     </div>
